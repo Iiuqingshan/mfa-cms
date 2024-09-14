@@ -2,12 +2,18 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "@/views/layout.vue";
 
+import ParkList from "@/views/park/ParkList.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '/',
         component: Layout
+    },
+    {
+        path: '/parks',
+        component: ParkList
     }
 ]
 

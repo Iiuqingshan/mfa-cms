@@ -12,7 +12,7 @@
                 active-text-color="#ffd04b">
                 <el-menu-item index="1">
                   <i class="el-icon-menu"></i>
-                  <span slot="title">Park</span>
+                  <router-link slot="title" to="/parks">Park</router-link>
                 </el-menu-item>
                 <el-menu-item index="2">
                   <i class="el-icon-setting"></i>
