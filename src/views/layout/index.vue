@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style>
-  .el-header, .el-footer {
+  .el-header {
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
