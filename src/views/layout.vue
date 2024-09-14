@@ -10,29 +10,59 @@
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
-                <el-submenu index="1">
-                  <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>导航一</span>
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
-                    <el-menu-item index="1-3">选项3</el-menu-item>
-                  </el-menu-item-group>
-                </el-submenu>
-                <el-menu-item index="2">
+                <el-menu-item index="1">
                   <i class="el-icon-menu"></i>
-                  <span slot="title">导航二</span>
+                  <span slot="title">Park</span>
+                </el-menu-item>
+                <el-menu-item index="2">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">Banner</span>
                 </el-menu-item>
                 <el-menu-item index="3">
-                  <i class="el-icon-document"></i>
-                  <span slot="title">导航三</span>
+                  <i class="el-icon-position"></i>
+                  <span slot="title">Zone</span>
                 </el-menu-item>
                 <el-menu-item index="4">
-                  <i class="el-icon-setting"></i>
-                  <span slot="title">导航四</span>
+                  <i class="el-icon-fork-spoon"></i>
+                  <span slot="title">Animal</span>
                 </el-menu-item>
+                <el-menu-item index="5">
+                  <i class="el-icon-fork-spoon"></i>
+                  <span slot="title">Dine</span>
+                </el-menu-item>
+                <el-menu-item index="6">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">Presentation</span>
+                </el-menu-item>
+                <el-menu-item index="7">
+                  <i class="el-icon-s-goods"></i>
+                  <span slot="title">Shop</span>
+                </el-menu-item>
+                <el-menu-item index="8">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">Restroom</span>
+                </el-menu-item>
+                <el-menu-item index="9">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">WaterRefill</span>
+                </el-menu-item>
+                <el-menu-item index="10">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">Service</span>
+                </el-menu-item>
+                <el-submenu index="4">
+                  <template slot="title">
+                    <i class="el-icon-location"></i>
+                    <span>Things To Do</span>
+                  </template>
+                  <el-menu-item-group>
+                    <el-menu-item index="1-1">Keeper Talk</el-menu-item>
+                    <el-menu-item index="1-2">Animal Feeding</el-menu-item>
+                    <el-menu-item index="1-3">Wildlife Experience</el-menu-item>
+                    <el-menu-item index="1-3">Rides</el-menu-item>
+                    <el-menu-item index="1-3">Kids</el-menu-item>
+                  </el-menu-item-group>
+                </el-submenu>
               </el-menu>
             </el-col>
           </el-row>
@@ -78,5 +108,13 @@ export default {
 
   .el-menu {
     border: none;
+  }
+
+  .el-dropdown-menu__item, .el-menu-item {
+    text-align: left;
+  }
+
+  .el-submenu__title {
+    text-align: left;
   }
 </style>
