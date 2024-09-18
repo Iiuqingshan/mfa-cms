@@ -19,35 +19,35 @@
                   <i class="el-icon-setting"></i>
                   <span slot="title">Banner</span>
                 </el-menu-item>
-                <el-menu-item index="3">
+                <el-menu-item index="/zones">
                   <i class="el-icon-position"></i>
                   <span slot="title">Zone</span>
                 </el-menu-item>
-                <el-menu-item index="4">
+                <el-menu-item index="/animals">
                   <i class="el-icon-fork-spoon"></i>
                   <span slot="title">Animal</span>
                 </el-menu-item>
-                <el-menu-item index="5">
+                <el-menu-item index="/dines">
                   <i class="el-icon-fork-spoon"></i>
                   <span slot="title">Dine</span>
                 </el-menu-item>
-                <el-menu-item index="6">
+                <el-menu-item index="/presentations">
                   <i class="el-icon-setting"></i>
                   <span slot="title">Presentation</span>
                 </el-menu-item>
-                <el-menu-item index="7">
+                <el-menu-item index="/shops">
                   <i class="el-icon-s-goods"></i>
                   <span slot="title">Shop</span>
                 </el-menu-item>
-                <el-menu-item index="8">
+                <el-menu-item index="/restrooms">
                   <i class="el-icon-setting"></i>
                   <span slot="title">Restroom</span>
                 </el-menu-item>
-                <el-menu-item index="9">
+                <el-menu-item index="/waterrefills">
                   <i class="el-icon-setting"></i>
                   <span slot="title">WaterRefill</span>
                 </el-menu-item>
-                <el-menu-item index="10">
+                <el-menu-item index="/services">
                   <i class="el-icon-setting"></i>
                   <span slot="title">Service</span>
                 </el-menu-item>
