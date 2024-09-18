@@ -9,11 +9,13 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        component: Layout
-    },
-    {
-        path: '/parks',
-        component: ParkList
+        component: Layout,
+        children: [
+            {
+                path: 'parks',
+                component: ParkList
+            }
+        ]
     }
 ]
 

@@ -4,17 +4,18 @@
           <el-row>
             <el-col>
               <el-menu
-                default-active="2"
+                default-active="/parks"
                 @open="handleOpen"
                 @close="handleClose"
+                @select="handleSelect"
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
-                <el-menu-item index="1">
+                <el-menu-item index="/parks">
                   <i class="el-icon-menu"></i>
-                  <router-link slot="title" to="/parks">Park</router-link>
+                  <span slot="title">Park</span>
                 </el-menu-item>
-                <el-menu-item index="2">
+                <el-menu-item index="/banners">
                   <i class="el-icon-setting"></i>
                   <span slot="title">Banner</span>
                 </el-menu-item>
@@ -69,14 +70,23 @@
         </el-aside>
         <el-container>
             <el-header>Header</el-header>
-            <el-main>Main</el-main>
+            <el-main>
+              <router-view></router-view>
+            </el-main>
         </el-container>
     </el-container>
 </template>
 
 <script>
 export default {
-    name: 'AppLayout'
+    name: 'AppLayout',
+    methods: {
+      handleSelect(index) {
+        if(this.$router.currentRoute.path !== index) {
+          this.$router.push(index)
+        }
+      }
+    }
 }
 </script>
 
