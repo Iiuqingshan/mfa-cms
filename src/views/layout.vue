@@ -94,6 +94,9 @@ export default {
   .el-container {
     height: 100%;
   }
+  .el-card__body, .el-main {
+    padding: 10px;
+  }
   
   .el-header {
     background-color: #B3C0D1;
