@@ -4,9 +4,7 @@
           <el-row>
             <el-col>
               <el-menu
-                default-active="/parks"
-                @open="handleOpen"
-                @close="handleClose"
+                :default-active="activeMenu"
                 @select="handleSelect"
                 background-color="#545c64"
                 text-color="#fff"
@@ -80,6 +78,21 @@
 <script>
 export default {
     name: 'AppLayout',
+    data() {
+      return {
+        activeMenu: "/parks"
+      }
+    },
+    watch: {
+      '$route.path'(newPath) {
+        this.activeMenu = newPath; // 更新菜单激活状态
+      }
+    },
+    mounted() {
+      if (this.$route.path === '/') {
+          this.$router.push('/parks');
+      }
+    },
     methods: {
       handleSelect(index) {
         if(this.$router.currentRoute.path !== index) {
