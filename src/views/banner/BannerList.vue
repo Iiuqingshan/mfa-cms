@@ -4,7 +4,18 @@
 
 <script>
 export default {
-
+  data() {
+      return {
+        search: {
+          name: ''
+        },
+        formInline: {
+          user: '',
+          region: ''
+        },
+        parks: []
+      }
+    }
 }
 </script>
 
