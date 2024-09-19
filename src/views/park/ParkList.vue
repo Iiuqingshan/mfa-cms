@@ -6,24 +6,25 @@
       <div class="search">
         <el-form :inline="true" :model="search" class="demo-form-inline">
           <el-form-item label="Name">
-            <el-input v-model="search.name" placeholder="Park Name"></el-input>
+            <el-input v-model="search.name" placeholder="Park Name" size="small"></el-input>
           </el-form-item>
           <el-form-item label="AEM Tag">
-            <el-input v-model="search.aemTag" placeholder="AEM Tag"></el-input>
+            <el-input v-model="search.aemTag" placeholder="AEM Tag" size="small"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" size="small" @click="onSubmit">查询</el-button>
+            <el-button type="primary" icon="el-icon-search" size="small" @click="onSubmit">Search</el-button>
           </el-form-item>
         </el-form>
       </div>
       <div class="group">
-        <el-button type="primary" icon="el-icon-circle-plus" size="small">Create NEW</el-button>
+        <el-button type="warning" icon="el-icon-plus" size="small" @click="jumpCreate">Create Park</el-button>
+        <el-button type="danger" icon="el-icon-delete" size="small" @click="handleBatchDelete">Batch Delete</el-button>
       </div>
     </div>
 
     <!-- 列表 -->
     <div class="content">
-      <el-table :data="parks" stripe style="width: 100%">
+      <el-table :data="parks" stripe style="width: 100%" header-row-class-name="active-header">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="date" label="日期" width="300"> </el-table-column>
         <el-table-column prop="name" label="姓名" width="300"> </el-table-column>
@@ -66,6 +67,12 @@ export default {
 
     onSubmit() {
       console.log('submit!');
+    },
+    jumpCreate() {
+      this.$router.push("/park-detail")
+    },
+    handleBatchDelete() {
+      console.log('handleBatchDelete');
     }
   }
 }
@@ -76,13 +83,20 @@ export default {
   background-color: #fff;
   padding: 10px 10px;
   margin-bottom: 5px;
+
   .search,
   .group {
     text-align: left;
-    margin: 10px 0;
+    margin: 20px 0;
+
     form {
       height: 40px;
     }
+  }
+}
+.content {
+  /deep/ .active-header {
+    color: #333;
   }
 }
 </style>

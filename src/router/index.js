@@ -2,7 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "@/views/layout.vue";
 
-import ParkList from "@/views/park/ParkList.vue";
+import Parks from "@/views/park/ParkList.vue";
+import ParkDetail from "@/views/park/ParkDetail.vue";
 import BannerList from "@/views/banner/BannerList.vue";
 import AnimalList from "@/views/animal/AnimalList.vue";
 import DineList from "@/views/dine/DineList.vue";
@@ -22,7 +23,11 @@ const routes = [
         children: [
             {
                 path: '/',
-                component: ParkList
+                component: Parks
+            },
+            {
+                path: '/park-detail',
+                component: ParkDetail
             },
             {
                 path: 'banners',
