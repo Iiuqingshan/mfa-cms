@@ -21,7 +21,7 @@ const routes = [
         component: Layout,
         children: [
             {
-                path: 'parks',
+                path: '/',
                 component: ParkList
             },
             {
