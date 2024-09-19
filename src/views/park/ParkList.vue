@@ -4,24 +4,20 @@
     <!-- 搜索 -->
     <div class="header">
       <div class="search">
-        <el-form :inline="true" :model="formInline" class="demo-form-inline">
-          <el-form-item label="审批人">
-            <el-input v-model="formInline.user" placeholder="审批人"></el-input>
+        <el-form :inline="true" :model="search" class="demo-form-inline">
+          <el-form-item label="Name">
+            <el-input v-model="search.name" placeholder="Park Name"></el-input>
           </el-form-item>
-          <el-form-item label="活动区域">
-            <el-select v-model="formInline.region" placeholder="活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
-            </el-select>
+          <el-form-item label="AEM Tag">
+            <el-input v-model="search.aemTag" placeholder="AEM Tag"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">查询</el-button>
+            <el-button type="primary" icon="el-icon-search" size="small" @click="onSubmit">查询</el-button>
           </el-form-item>
         </el-form>
       </div>
       <div class="group">
-        <el-button type="primary" icon="el-icon-edit"></el-button>
-        <el-button type="primary" icon="el-icon-share"></el-button>
+        <el-button type="primary" icon="el-icon-circle-plus" size="small">Create NEW</el-button>
       </div>
     </div>
 
@@ -49,9 +45,9 @@ export default {
   data() {
     return {
       parks: [],
-      formInline: {
-        user: '',
-        region: ''
+      search: {
+        name: '',
+        aemTag: ''
       }
     }
   },
@@ -76,9 +72,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.search,
-.group {
-  text-align: left;
+.header {
+  background-color: #fff;
   padding: 10px 10px;
+  margin-bottom: 5px;
+  .search,
+  .group {
+    text-align: left;
+    margin: 10px 0;
+    form {
+      height: 40px;
+    }
+  }
 }
 </style>
