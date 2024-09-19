@@ -24,7 +24,7 @@
 
     <!-- 列表 -->
     <div class="content">
-      <el-table :data="parks" stripe style="width: 100%" header-row-class-name="active-header">
+      <el-table :data="parks" stripe style="width: 100%" cell-class-name="table-center" header-cell-class-name="active-header">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="date" label="日期" width="300"> </el-table-column>
         <el-table-column prop="name" label="姓名" width="300"> </el-table-column>
@@ -45,7 +45,23 @@
 export default {
   data() {
     return {
-      parks: [],
+      parks: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }],
       search: {
         name: '',
         aemTag: ''
@@ -53,7 +69,7 @@ export default {
     }
   },
   mounted() {
-    this.fetchParks()
+    // this.fetchParks()
   },
   methods: {
     async fetchParks() {
@@ -97,6 +113,11 @@ export default {
 .content {
   /deep/ .active-header {
     color: #333;
+    text-align: center;
+  }
+
+  /deep/ .table-center {
+    text-align: center;
   }
 }
 </style>
