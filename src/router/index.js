@@ -26,7 +26,7 @@ const routes = [
                 component: Parks
             },
             {
-                path: '/park-detail',
+                path: 'park/detail',
                 component: ParkDetail
             },
             {

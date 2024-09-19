@@ -16,7 +16,7 @@
         </el-form>
       </div>
       <div class="group">
-        <el-button type="warning" icon="el-icon-plus" size="small" @click="jumpCreate">Create Park</el-button>
+        <el-button type="warning" icon="el-icon-plus" size="small" @click="jumpParkPage">Create Park</el-button>
         <el-button type="danger" icon="el-icon-delete" size="small" @click="handleBatchDelete">Batch Delete</el-button>
       </div>
     </div>
@@ -56,28 +56,28 @@ export default {
         {
           date: "2016-05-02",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄",
+          address: "上海市普陀区金沙江路 1518 弄"
         },
         {
           date: "2016-05-04",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄",
+          address: "上海市普陀区金沙江路 1517 弄"
         },
         {
           date: "2016-05-01",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄",
+          address: "上海市普陀区金沙江路 1519 弄"
         },
         {
           date: "2016-05-03",
           name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄",
+          address: "上海市普陀区金沙江路 1516 弄"
         },
       ],
       search: {
         name: "",
-        aemTag: "",
-      },
+        aemTag: ""
+      }
     };
   },
   mounted() {
@@ -92,20 +92,18 @@ export default {
         console.error("Error fetching data:", err);
       }
     },
-
     onSubmit() {
       console.log("submit!");
     },
-    jumpCreate() {
-      this.$router.push("/park-detail");
+    jumpParkPage() {
+      this.$router.push("/park/detail");
     },
     handleBatchDelete() {
       console.log("handleBatchDelete");
-    },
-  },
+    }
+  }
 };
 </script>
-
 <style lang="less" scoped>
 .header {
   background-color: #fff;
@@ -125,6 +123,7 @@ export default {
 
 .content {
   background-color: #fff;
+
   /deep/ .active-header {
     color: #333;
     text-align: center;
