@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <!-- 搜索 -->
     <div class="header">
@@ -24,49 +23,62 @@
 
     <!-- 列表 -->
     <div class="content">
-      <el-table :data="parks" stripe style="width: 100%" cell-class-name="table-center" header-cell-class-name="active-header">
+      <el-table :data="parks" stripe style="width: 100%" cell-class-name="table-center"
+        header-cell-class-name="active-header">
         <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column prop="date" label="日期" width="300"> </el-table-column>
-        <el-table-column prop="name" label="姓名" width="300"> </el-table-column>
+        <el-table-column prop="date" label="日期" width="300">
+        </el-table-column>
+        <el-table-column prop="name" label="姓名" width="300">
+        </el-table-column>
         <el-table-column prop="address" label="地址"> </el-table-column>
         <el-table-column label="操作" align="center" width="160">
           <template v-slot="scope">
             <i class="el-icon-edit" @click="handleEdit(scope.$index, scope.row)"
-              style="cursor: pointer; margin-right: 10px;"></i>
-            <i class="el-icon-delete" @click="handleDelete(scope.$index, scope.row)" style="cursor: pointer;"></i>
+              style="cursor: pointer; margin-right: 10px"></i>
+            <i class="el-icon-delete" @click="handleDelete(scope.$index, scope.row)" style="cursor: pointer"></i>
           </template>
         </el-table-column>
       </el-table>
+      <pagination></pagination>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from "@/components/pagination/CustomPagination.vue"
 export default {
+  components: {
+    Pagination
+  },
   data() {
     return {
-      parks: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }],
+      parks: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄",
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄",
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄",
+        },
+      ],
       search: {
-        name: '',
-        aemTag: ''
-      }
-    }
+        name: "",
+        aemTag: "",
+      },
+    };
   },
   mounted() {
     // this.fetchParks()
@@ -74,24 +86,24 @@ export default {
   methods: {
     async fetchParks() {
       try {
-        const res = await this.$http.get("/cms/parks")
-        this.parks = res.data.content
+        const res = await this.$http.get("/cms/parks");
+        this.parks = res.data.content;
       } catch (err) {
-        console.error('Error fetching data:', err);
+        console.error("Error fetching data:", err);
       }
     },
 
     onSubmit() {
-      console.log('submit!');
+      console.log("submit!");
     },
     jumpCreate() {
-      this.$router.push("/park-detail")
+      this.$router.push("/park-detail");
     },
     handleBatchDelete() {
-      console.log('handleBatchDelete');
-    }
-  }
-}
+      console.log("handleBatchDelete");
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -110,7 +122,9 @@ export default {
     }
   }
 }
+
 .content {
+  background-color: #fff;
   /deep/ .active-header {
     color: #333;
     text-align: center;

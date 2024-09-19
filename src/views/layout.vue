@@ -112,7 +112,6 @@ export default {
 
 .el-main {
   background-color: #E9EEF3;
-  text-align: center;
 }
 
 .el-menu {
@@ -122,6 +121,10 @@ export default {
 .el-dropdown-menu__item,
 .el-menu-item {
   text-align: left;
+}
+
+.is-active {
+  background-color: rgb(66, 129, 175) !important;
 }
 
 </style>
