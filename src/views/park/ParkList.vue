@@ -17,9 +17,6 @@
   export default {
     data() {
       return {
-        search: {
-          name: ''
-        },
         parks: []
       }
     },
