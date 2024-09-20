@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Layout from "@/views/layout.vue";
+import Layout from "@/views/layout/index.vue";
 
 import Parks from "@/views/park/index.vue";
 import ParkDetail from "@/views/park/detail.vue";
@@ -19,10 +19,14 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
+        redirect: '/parks'
+    },
+    {
+        path: '/',
         component: Layout,
         children: [
             {
-                path: '/',
+                path: '/parks',
                 component: Parks
             },
             {
