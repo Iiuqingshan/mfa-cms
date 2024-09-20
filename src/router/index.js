@@ -63,7 +63,7 @@ const routes = [
                 component: Restrooms
             },
             {
-                path: 'waterrefills',
+                path: 'water-refills',
                 component: WaterRefills
             },
             {

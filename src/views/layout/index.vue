@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <Menu />
+    <NavMenu />
     <el-container>
       <el-header>
         <el-button type="primary" @click="goLogin">退出</el-button>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Menu from './menu.vue'
+import NavMenu from './navMenu'
 export default {
   name: 'AppLayout',
   components: {
-    Menu
+    NavMenu
   },
   data() {
     return {
