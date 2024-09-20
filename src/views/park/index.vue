@@ -46,34 +46,14 @@
 
 <script>
 import Pagination from "@/components/pagination/index.vue"
+import { getParks } from "@/apis/park";
 export default {
   components: {
     Pagination
   },
   data() {
     return {
-      parks: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        },
-      ],
+      parks: [],
       search: {
         name: "",
         aemTag: ""
@@ -81,13 +61,13 @@ export default {
     };
   },
   mounted() {
-    // this.fetchParks()
+    this.fetchParks()
   },
   methods: {
     async fetchParks() {
       try {
-        const res = await this.$http.get("/cms/parks");
-        this.parks = res.data.content;
+        const res = await getParks();
+        this.parks = res.data.data.content;
       } catch (err) {
         console.error("Error fetching data:", err);
       }
