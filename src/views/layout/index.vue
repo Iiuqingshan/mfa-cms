@@ -1,8 +1,10 @@
 <template>
   <el-container>
-    <NavMenu />
+    <Menu />
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <el-button type="primary" @click="goLogin">退出</el-button>
+      </el-header>
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -11,14 +13,19 @@
 </template>
 
 <script>
-import NavMenu from './navMenu.vue'
+import Menu from './menu.vue'
 export default {
   name: 'AppLayout',
   components: {
-    NavMenu
+    Menu
   },
   data() {
     return {
+    }
+  },
+  methods: {
+    goLogin() {
+      this.$router.push('/login')
     }
   }
 }
@@ -36,7 +43,7 @@ export default {
 
 .el-header {
   background-color: #B3C0D1;
-  text-align: center;
+  text-align: right;
   line-height: 60px;
 }
 
