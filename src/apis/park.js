@@ -29,3 +29,13 @@ export const savePark = (params) => {
             throw new Error(err)
         })
 }
+
+export const deletePark = (id) => {
+    Request.delete(`/cms/parks/${id}`)
+        .then(res => {
+            return res
+        })
+        .catch(err => {
+            throw new Error(err)
+        })
+}

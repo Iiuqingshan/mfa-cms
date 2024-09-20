@@ -69,8 +69,13 @@ export default {
   methods: {
     async savePark() {
       try{
-        const res = await savePark(this.park)
-        console.log("111111111", res)
+        await savePark(this.park)
+        this.$message({
+          showClose: true,
+          message: 'Success!',
+          type: 'success'
+        });
+        this.$router.push('/')
       }catch (err) {
         console.log(err)
       }

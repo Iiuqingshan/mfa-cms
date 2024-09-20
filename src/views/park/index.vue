@@ -26,11 +26,10 @@
       <el-table :data="parks" stripe style="width: 100%" cell-class-name="table-center"
         header-cell-class-name="active-header">
         <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column prop="date" label="日期" width="300">
-        </el-table-column>
-        <el-table-column prop="name" label="姓名" width="300">
-        </el-table-column>
-        <el-table-column prop="address" label="地址"> </el-table-column>
+        <el-table-column prop="name" label="Name" width="300"></el-table-column>
+        <el-table-column prop="coordinates" label="Coordinates" width="300"></el-table-column>
+        <el-table-column prop="active" label="Active"></el-table-column>
+        <el-table-column prop="mapDisplay" label="MapDisplay"> </el-table-column>
         <el-table-column label="操作" align="center" width="160">
           <template v-slot="scope">
             <i class="el-icon-edit" @click="handleEdit(scope.$index, scope.row)"
@@ -46,7 +45,7 @@
 
 <script>
 import Pagination from "@/components/pagination/index.vue"
-import { getParks } from "@/apis/park";
+import { getParks, deletePark } from "@/apis/park";
 export default {
   components: {
     Pagination
@@ -80,6 +79,29 @@ export default {
     },
     handleBatchDelete() {
       console.log("handleBatchDelete");
+    },
+    async handleDelete(idx, obj) {
+      this.$confirm('Are you sure you want to delete?', '提示', {
+        confirmButtonText: 'yes',
+        cancelButtonText: 'cancel',
+        type: 'warning'
+      }).then(() => {
+        try {
+          deletePark(obj.id);
+        } catch (err) {
+          console.error("Delete error", err);
+        }
+        this.$message({
+          type: 'success',
+          message: 'Success!'
+        });
+        fetchParks();
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: 'Cancel'
+        });
+      });
     }
   }
 };
