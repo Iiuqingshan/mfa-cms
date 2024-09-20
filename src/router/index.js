@@ -13,7 +13,9 @@ import Restrooms from "@/views/restroom/index.vue";
 import WaterRefills from "@/views/water-refill/index.vue";
 import Zones from "@/views/zone/index.vue";
 import Services from "@/views/service-category/index.vue";
+import KeeperTalk from "@/views/things-to-do/keeper-talk/index.vue"
 import Login from '@/views/login/index.vue'
+
 
 Vue.use(VueRouter);
 
@@ -73,6 +75,10 @@ const routes = [
             {
                 path: 'services',
                 component: Services
+            },
+            {
+                path: 'things-to-do/keeper-talks',
+                component: KeeperTalk
             }
         ]
     }

@@ -20,11 +20,10 @@
 <script>
 export default {
     name: 'NavItem',
+    props: ['item', 'path'],
     data() {
-        return {
-        }
-    },
-    props: ['item', 'path']// 父传给子的数据，相当于形参
+        return {}
+    }
 }
 </script>
 

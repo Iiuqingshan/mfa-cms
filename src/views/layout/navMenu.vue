@@ -1,8 +1,8 @@
 <template>
     <el-aside width="200px">
-        <el-menu :default-active="activeMenu" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
+        <el-menu :default-active="$route.path" exact background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
             router>
-            <!-- 遍历menus，动态加载menu -->
+            <!-- 遍历menus，动态加载menu item 和path 是传参-->
             <NavItem v-for="item in menus" :key="item.path" :item="item" :path="item.path"/>
         </el-menu>
     </el-aside>
@@ -71,11 +71,11 @@ export default {
                 },
                 {
                     name: 'Things To Do',
-                    path: '/services',
+                    path: '/things-to-dos',
                     icon: 'el-icon-setting',
                     children: [{
-                        name: 'Service',
-                        path: '/services',
+                        name: 'Keeper Talks',
+                        path: '/things-to-do/keeper-talks',
                     }]
                 },
             ]
