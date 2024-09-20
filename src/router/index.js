@@ -4,15 +4,15 @@ import Layout from "@/views/layout.vue";
 
 import Parks from "@/views/park/index.vue";
 import ParkDetail from "@/views/park/detail.vue";
-import BannerList from "@/views/banner/index.vue";
-import AnimalList from "@/views/animal/index.vue";
-import DineList from "@/views/dine/index.vue";
-import PresentationList from "@/views/presentation/index.vue";
-import ShopList from "@/views/shop/index.vue";
-import RestroomList from "@/views/restroom/index.vue";
-import WaterRefillList from "@/views/water-refill/index.vue";
-import ZoneList from "@/views/zone/index.vue";
-import ServiceList from "@/views/service-category/index.vue";
+import Banners from "@/views/banner/index.vue";
+import Animals from "@/views/animal/index.vue";
+import Dines from "@/views/dine/index.vue";
+import Presentations from "@/views/presentation/index.vue";
+import Shops from "@/views/shop/index.vue";
+import Restrooms from "@/views/restroom/index.vue";
+import WaterRefills from "@/views/water-refill/index.vue";
+import Zones from "@/views/zone/index.vue";
+import Services from "@/views/service-category/index.vue";
 
 Vue.use(VueRouter);
 
@@ -31,39 +31,39 @@ const routes = [
             },
             {
                 path: 'banners',
-                component: BannerList
+                component: Banners
             },
             {
                 path: 'animals',
-                component: AnimalList
+                component: Animals
             },
             {
                 path: 'dines',
-                component: DineList
+                component: Dines
             },
             {
                 path: 'presentations',
-                component: PresentationList
+                component: Presentations
             },
             {
                 path: 'shops',
-                component: ShopList
+                component: Shops
             },
             {
                 path: 'restrooms',
-                component: RestroomList
+                component: Restrooms
             },
             {
                 path: 'waterrefills',
-                component: WaterRefillList
+                component: WaterRefills
             },
             {
                 path: 'zones',
-                component: ZoneList
+                component: Zones
             },
             {
                 path: 'services',
-                component: ServiceList
+                component: Services
             }
         ]
     }
