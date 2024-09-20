@@ -11,7 +11,7 @@
             <el-input v-model="search.aemTag" placeholder="AEM Tag" size="small"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" size="small" @click="onSubmit">Search</el-button>
+            <el-button type="primary" icon="el-icon-search" size="small" @click="handleSearch">Search</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -60,7 +60,7 @@ export default {
       }
     };
   },
-  mounted() {
+  created() {
     this.fetchParks()
   },
   methods: {
@@ -72,11 +72,11 @@ export default {
         console.error("Error fetching data:", err);
       }
     },
-    onSubmit() {
-      console.log("submit!");
+    handleSearch() {
+      console.log("handleSearch!");
     },
     jumpParkPage() {
-      this.$router.push("/park/detail");
+      this.$router.push("/park/new");
     },
     handleBatchDelete() {
       console.log("handleBatchDelete");

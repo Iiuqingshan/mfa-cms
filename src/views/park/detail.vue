@@ -38,14 +38,15 @@
         <el-input v-model="park.staticMapLinkCn" placeholder="Static Map LinkCn"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit">Create</el-button>
-        <el-button>Cancel</el-button>
+        <el-button type="primary" @click="savePark">Create</el-button>
+        <el-button @click="goBack">Cancel</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
+import { getPark, savePark } from '@/apis/park'
 export default {
   data() {
     return {
@@ -66,8 +67,17 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      console.log('submit!');
+    async savePark() {
+      try{
+        const res = await savePark(this.park)
+        console.log("111111111", res)
+      }catch (err) {
+        console.log(err)
+      }
+      
+    },
+    goBack() {
+      this.$router.go(-1)
     }
   }
 }
