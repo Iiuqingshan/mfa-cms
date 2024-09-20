@@ -2,17 +2,17 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Layout from "@/views/layout.vue";
 
-import Parks from "@/views/park/ParkList.vue";
-import ParkDetail from "@/views/park/ParkDetail.vue";
-import BannerList from "@/views/banner/BannerList.vue";
-import AnimalList from "@/views/animal/AnimalList.vue";
-import DineList from "@/views/dine/DineList.vue";
-import PresentationList from "@/views/presentation/PresentationList.vue";
-import ShopList from "@/views/shop/ShopList.vue";
-import RestroomList from "@/views/restroom/RestroomList.vue";
-import WaterRefillList from "@/views/water-refill/WaterRefillList.vue";
-import ZoneList from "@/views/zone/ZoneList.vue";
-import ServiceList from "@/views/service-category/ServiceList.vue";
+import Parks from "@/views/park/index.vue";
+import ParkDetail from "@/views/park/detail.vue";
+import BannerList from "@/views/banner/index.vue";
+import AnimalList from "@/views/animal/index.vue";
+import DineList from "@/views/dine/index.vue";
+import PresentationList from "@/views/presentation/index.vue";
+import ShopList from "@/views/shop/index.vue";
+import RestroomList from "@/views/restroom/index.vue";
+import WaterRefillList from "@/views/water-refill/index.vue";
+import ZoneList from "@/views/zone/index.vue";
+import ServiceList from "@/views/service-category/index.vue";
 
 Vue.use(VueRouter);
 
