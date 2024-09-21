@@ -31,7 +31,6 @@ const routes = [
     {
         path: '/',
         component: Layout,
-        meta: { title: 'Home'},
         redirect: '/parks',
         children: [
             {

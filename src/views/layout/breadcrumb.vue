@@ -15,17 +15,23 @@ export default {
             list: []
         }
     },
-    methods: {},
+    methods: {
+        getBreadcrumb(matched) {
+            if (matched[0].path === '') {
+                matched = matched.slice(1)
+            }
+            this.list = matched
+        }
+    },
     watch: {
         $route(to, from) {
             // 监听路由变化
-            this.list = to.matched
+            this.getBreadcrumb(to.matched)
         }
     },
     mounted() {
         // 首次加载更新面包屑
-        this.list = this.$route.matched
-        console.log(this.$route.matched)
+        this.getBreadcrumb(this.$route.matched)
     }
 }
 </script>
