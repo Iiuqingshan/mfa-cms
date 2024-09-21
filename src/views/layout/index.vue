@@ -4,7 +4,7 @@
     <el-container>
       <el-header>
         <Breadcrumb />
-        <el-button type="primary" @click="goLogin">退出</el-button>
+        <el-button type="primary" size="small" @click="goLogin">退出</el-button>
       </el-header>
       <el-main>
         <router-view></router-view>
@@ -45,8 +45,11 @@ export default {
 }
 
 .el-header {
+  display: flex;
+  justify-content: space-between;
   text-align: right;
   line-height: 16px;
+  padding: 10px 10px;
 }
 
 .el-aside {

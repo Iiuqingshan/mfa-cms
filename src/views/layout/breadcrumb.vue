@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="breadcrumb">
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item v-for="i in list" :key="i.path">
                 <router-link :to="i.path">{{ i.meta.title }}</router-link> 
@@ -36,4 +36,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.breadcrumb {
+    padding: 10px 10px 10px 0;
+}
+</style>
