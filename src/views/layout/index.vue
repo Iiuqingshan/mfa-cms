@@ -3,6 +3,7 @@
     <NavMenu />
     <el-container>
       <el-header>
+        <Breadcrumb />
         <el-button type="primary" @click="goLogin">退出</el-button>
       </el-header>
       <el-main>
@@ -14,10 +15,12 @@
 
 <script>
 import NavMenu from './navMenu'
+import Breadcrumb from './breadcrumb.vue'
 export default {
   name: 'AppLayout',
   components: {
-    NavMenu
+    NavMenu,
+    Breadcrumb
   },
   data() {
     return {
@@ -42,9 +45,8 @@ export default {
 }
 
 .el-header {
-  background-color: #B3C0D1;
   text-align: right;
-  line-height: 60px;
+  line-height: 16px;
 }
 
 .el-aside {

@@ -31,54 +31,81 @@ const routes = [
     {
         path: '/',
         component: Layout,
+        meta: { title: 'Home'},
+        redirect: '/parks',
         children: [
             {
                 path: '/parks',
+                meta: { title: 'Parks'},
                 component: Parks
             },
             {
                 path: 'park/new',
+                meta: { title: 'Create Park'},
                 component: ParkDetail
             },
             {
                 path: 'banners',
+                meta: { title: 'Banners'},
                 component: Banners
             },
             {
                 path: 'animals',
+                meta: { title: 'Animals'},
                 component: Animals
             },
             {
                 path: 'dines',
+                meta: { title: 'Dines'},
                 component: Dines
             },
             {
                 path: 'presentations',
+                meta: { title: 'Presentations'},
                 component: Presentations
             },
             {
                 path: 'shops',
+                meta: { title: 'Shops'},
                 component: Shops
             },
             {
                 path: 'restrooms',
+                meta: { title: 'Restrooms'},
                 component: Restrooms
             },
             {
                 path: 'water-refills',
+                meta: { title: 'Water Refills'},
                 component: WaterRefills
             },
             {
                 path: 'zones',
+                meta: { title: 'Zones'},
                 component: Zones
             },
             {
                 path: 'services',
+                meta: { title: 'Services'},
                 component: Services
             },
             {
-                path: 'things-to-do/keeper-talks',
-                component: KeeperTalk
+                path: 'things-to-do',
+                meta: { title: 'Things To Do'},
+                component: KeeperTalk,
+                redirect: '/things-to-do/keeper-talks',
+                children: [
+                    {
+                        path: '/things-to-do/keeper-talks',
+                        meta: { title: 'Keeper Talks'},
+                        component: KeeperTalk
+                    },
+                    {
+                        path: '/things-to-do/animal-feedings',
+                        meta: { title: 'Animal Feedings'},
+                        component: KeeperTalk
+                    },
+                ]
             }
         ]
     }

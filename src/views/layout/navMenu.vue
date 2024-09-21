@@ -1,9 +1,9 @@
 <template>
     <el-aside width="200px">
-        <el-menu :default-active="$route.path" exact background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
-            router>
+        <el-menu :default-active="$route.path" exact background-color="#545c64" text-color="#fff"
+            active-text-color="#ffd04b" router>
             <!-- 遍历menus，动态加载menu item 和path 是传参-->
-            <NavItem v-for="item in menus" :key="item.path" :item="item" :path="item.path"/>
+            <NavItem v-for="item in menus" :key="item.path" :item="item" :path="item.path" />
         </el-menu>
     </el-aside>
 </template>
@@ -76,6 +76,9 @@ export default {
                     children: [{
                         name: 'Keeper Talks',
                         path: '/things-to-do/keeper-talks',
+                    }, {
+                        name: 'Aniaml Feeding',
+                        path: '/things-to-do/animal-feedings',
                     }]
                 },
             ]
