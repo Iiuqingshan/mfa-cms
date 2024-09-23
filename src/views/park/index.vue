@@ -63,6 +63,9 @@ export default {
     this.fetchParks()
   },
   methods: {
+    jumpParkPage() {
+      this.$router.push({ name: 'ParkDetail' });
+    },
     async fetchParks() {
       try {
         const res = await getParks();
@@ -74,8 +77,8 @@ export default {
     handleSearch() {
       console.log("handleSearch!");
     },
-    jumpParkPage() {
-      this.$router.push("/park/new");
+    handleEdit(idx, obj) {
+      this.$router.push({ name: 'ParkDetail', params: { id: obj.id } });
     },
     handleBatchDelete() {
       console.log("handleBatchDelete");

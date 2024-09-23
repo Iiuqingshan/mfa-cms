@@ -35,72 +35,86 @@ const routes = [
         children: [
             {
                 path: '/parks',
+                name: 'Park',
                 meta: { title: 'Parks'},
                 component: Parks
             },
             {
-                path: 'park/new',
-                meta: { title: 'Create Park'},
+                path: 'parks/park/:id?',
+                name: 'ParkDetail',
+                meta: { title: 'Detail'},
                 component: ParkDetail
             },
             {
                 path: 'banners',
+                name: 'Banner',
                 meta: { title: 'Banners'},
                 component: Banners
             },
             {
                 path: 'animals',
+                name: 'Animal',
                 meta: { title: 'Animals'},
                 component: Animals
             },
             {
                 path: 'dines',
+                name: 'Dine',
                 meta: { title: 'Dines'},
                 component: Dines
             },
             {
                 path: 'presentations',
+                name: 'Presentation',
                 meta: { title: 'Presentations'},
                 component: Presentations
             },
             {
                 path: 'shops',
+                name: 'Shop',
                 meta: { title: 'Shops'},
                 component: Shops
             },
             {
                 path: 'restrooms',
+                name: 'Restroom',
                 meta: { title: 'Restrooms'},
                 component: Restrooms
             },
             {
                 path: 'water-refills',
+                name: 'WaterRefill',
                 meta: { title: 'Water Refills'},
                 component: WaterRefills
             },
             {
                 path: 'zones',
+                name: 'Zone',
                 meta: { title: 'Zones'},
                 component: Zones
             },
             {
                 path: 'services',
+                name: 'Service',
                 meta: { title: 'Services'},
                 component: Services
             },
             {
                 path: 'things-to-do',
+                name: 'ThingsToDo',
                 meta: { title: 'Things To Do'},
                 component: KeeperTalk,
                 redirect: '/things-to-do/keeper-talks',
                 children: [
                     {
                         path: '/things-to-do/keeper-talks',
+                        name: 'KeeperTalk',
                         meta: { title: 'Keeper Talks'},
                         component: KeeperTalk
                     },
                     {
                         path: '/things-to-do/animal-feedings',
+                        name: 'AnimalFeeding',
                         meta: { title: 'Animal Feedings'},
                         component: KeeperTalk
                     },

@@ -10,8 +10,8 @@ export const getParks = () => {
         })
 }
 
-export const getPark = (id) => {
-    Request.get(`/cms/parks/${id}`)
+export const getParkById = (id) => {
+    return Request.get(`/cms/parks/${id}`)
         .then(res => {
             return res
         })

@@ -46,10 +46,12 @@
 </template>
 
 <script>
-import { getPark, savePark } from '@/apis/park'
+import { getParkById, savePark } from '@/apis/park'
 export default {
+  name: 'ParkDetail',
   data() {
     return {
+      parkId: null,
       park: {
         name: '',
         active: false,
@@ -68,7 +70,7 @@ export default {
   },
   methods: {
     async savePark() {
-      try{
+      try {
         await savePark(this.park)
         this.$message({
           showClose: true,
@@ -76,14 +78,27 @@ export default {
           type: 'success'
         });
         this.$router.push('/')
-      }catch (err) {
+      } catch (err) {
         console.log(err)
       }
-      
+    },
+    async loadPark() {
+      const id = this.$route.params.id
+      // 如果路由中没有id
+      if (id) {
+        // 请求park 数据
+        const res = await getParkById(this.$route.params.id)
+        this.park = res.data.data
+      } else {
+        this.park = {}
+      }
     },
     goBack() {
       this.$router.go(-1)
     }
+  },
+  created() {
+    this.loadPark();
   }
 }
 </script>
