@@ -84,9 +84,7 @@ export default {
     },
     async loadPark() {
       const id = this.$route.params.id
-      // 如果路由中没有id
       if (id) {
-        // 请求park 数据
         const res = await getParkById(this.$route.params.id)
         this.park = res.data.data
       } else {

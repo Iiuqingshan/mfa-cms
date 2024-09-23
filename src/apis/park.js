@@ -31,7 +31,7 @@ export const savePark = (params) => {
 }
 
 export const deletePark = (id) => {
-    Request.delete(`/cms/parks/${id}`)
+    return Request.delete(`/cms/parks/${id}`)
         .then(res => {
             return res
         })

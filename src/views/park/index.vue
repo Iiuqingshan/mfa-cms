@@ -89,16 +89,12 @@ export default {
         cancelButtonText: 'cancel',
         type: 'warning'
       }).then(() => {
-        try {
-          deletePark(obj.id);
-        } catch (err) {
-          console.error("Delete error", err);
-        }
+        deletePark(obj.id);
         this.$message({
           type: 'success',
           message: 'Success!'
         });
-        fetchParks();
+        this.fetchParks();
       }).catch(() => {
         this.$message({
           type: 'info',
