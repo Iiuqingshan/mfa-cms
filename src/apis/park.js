@@ -49,3 +49,23 @@ export const deletePark = (id) => {
             throw new Error(err)
         })
 }
+
+export const changeActive = (id, active) => {
+    Request.post(`/cms/parks/${id}/active`, active)
+        .then(res => {
+            return res
+        })
+        .catch(err => {
+            throw new Error(err)
+        })
+}
+
+export const changeMapDisplay = (id, mapDisplay) => {
+    Request.post(`/cms/parks/${id}/map-display`, mapDisplay)
+        .then(res => {
+            return res
+        })
+        .catch(err => {
+            throw new Error(err)
+        })
+}

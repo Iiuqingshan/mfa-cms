@@ -19,8 +19,15 @@ export default {
     },
     methods: {
         changeSwitch() {
-            // 向父组件发送一个事件， 父组件可以使用@change触发
-            this.$emit('change', this.value);
+            // 当开关状态发生变化时，更新 localValue，并通知父组件
+            this.$emit('input', this.localValue); // 触发 input 事件，将最新值传递给父组件
+            this.$emit('change', this.value); // 可选：用于额外的逻辑处理
+        }
+    },
+    watch: {
+        value(newValue) {
+            // 如果父组件的值改变，更新 localValue
+            this.localValue = newValue
         }
     }
 }
