@@ -28,8 +28,16 @@
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="name" label="Name" width="300"></el-table-column>
         <el-table-column prop="coordinates" label="Coordinates" width="300"></el-table-column>
-        <el-table-column prop="active" label="Active"></el-table-column>
-        <el-table-column prop="mapDisplay" label="MapDisplay"> </el-table-column>
+        <el-table-column prop="active" label="Active">
+          <template v-slot="scope">
+            <CommonSwitch :value="scope.row.active" @change="handleActiveSwitch(scope.row)"></CommonSwitch>
+          </template>
+        </el-table-column>
+        <el-table-column prop="mapDisplay" label="MapDisplay">
+          <template v-slot="scope">
+            <CommonSwitch :value="scope.row.mapDisplay" @change="handleMapDisplaySwitch(scope.row)"></CommonSwitch>
+          </template>
+        </el-table-column>
         <el-table-column label="操作" align="center" width="160">
           <template v-slot="scope">
             <i class="el-icon-edit" @click="handleEdit(scope.$index, scope.row)"
@@ -45,10 +53,12 @@
 
 <script>
 import Pagination from "@/components/pagination/index.vue"
+import CommonSwitch from '@/components/commonSwitch/index.vue'
 import { getParks, deletePark } from "@/apis/park";
 export default {
   components: {
-    Pagination
+    Pagination,
+    CommonSwitch
   },
   data() {
     return {
@@ -79,6 +89,12 @@ export default {
     },
     handleEdit(idx, obj) {
       this.$router.push({ name: 'ParkDetail', params: { id: obj.id } });
+    },
+    handleSwitch(row) {
+      console.log("1111", row);
+    },
+    handleMapDisplaySwitch(row) {
+      console.log("1111", row);
     },
     handleBatchDelete() {
       console.log("handleBatchDelete");
