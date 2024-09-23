@@ -20,8 +20,18 @@ export const getParkById = (id) => {
         })
 }
 
-export const savePark = (params) => {
+export const createPark = (params) => {
     return Request.post('/cms/parks', params)
+        .then(res => {
+            return res
+        })
+        .catch(err => {
+            throw new Error(err)
+        })
+}
+
+export const updatePark = (id, params) => {
+    return Request.put(`/cms/parks/${id}`, params)
         .then(res => {
             return res
         })

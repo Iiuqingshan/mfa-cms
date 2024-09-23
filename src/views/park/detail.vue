@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { getParkById, savePark } from '@/apis/park'
+import { getParkById, createPark, updatePark } from '@/apis/park'
 export default {
   name: 'ParkDetail',
   data() {
@@ -70,8 +70,14 @@ export default {
   },
   methods: {
     async savePark() {
+      const parkId = this.$route.params.id
+      console.log(parkId)
       try {
-        await savePark(this.park)
+        if (parkId) {
+          await updatePark(parkId, this.park)
+        } else {
+          await createPark(this.park)
+        }
         this.$message({
           showClose: true,
           message: 'Success!',
