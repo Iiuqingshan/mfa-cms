@@ -43,9 +43,9 @@
         <el-table-column label="操作" align="center" width="160">
           <template v-slot="scope">
             <el-button type="success" icon="el-icon-edit" size="small" circle
-              @click="handleEdit(scope.$index, scope.row)"></el-button>
+              @click="handleEdit(scope.row)"></el-button>
             <el-button type="danger" icon="el-icon-delete" size="small" circle
-              @click="handleDelete(scope.$index, scope.row)"></el-button>
+              @click="handleDelete(scope.row)"></el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -92,7 +92,7 @@ export default {
       console.log("handleSearch!");
     },
 
-    handleEdit(idx, obj) {
+    handleEdit(obj) {
       this.$router.push({ name: 'ParkDetail', params: { id: obj.id } });
     },
 
