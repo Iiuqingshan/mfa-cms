@@ -85,6 +85,7 @@ export default {
         this.parks = res.data.data.content;
       } catch (err) {
         console.error("Error fetching data:", err);
+        this.$message.error(err);
       }
     },
 
@@ -96,23 +97,36 @@ export default {
       this.$router.push({ name: 'ParkDetail', params: { id: obj.id } });
     },
 
-    handleActiveSwitch(row) {
+    async handleActiveSwitch(row) {
       try {
-        changeActive(row.id, row.active);
+        await changeActive(row.id, row.active)
+          .then(res => {
+            this.$message({
+              message: 'Success!',
+              type: 'success'
+            });
 
-        this.$message({
-          message: 'Success!',
-          type: 'success'
-        });
-
-        this.fetchParks();
+            this.fetchParks();
+          })
       } catch (err) {
         this.$message.error(err);
       }
     },
 
-    handleMapDisplaySwitch(row) {
-      console.log("1111", row);
+    async handleMapDisplaySwitch(row) {
+      try {
+        await changeMapDisplay(row.id, row.mapDisplay)
+          .then(res => {
+            this.$message({
+              message: 'Success!',
+              type: 'success'
+            });
+
+            this.fetchParks();
+          })
+      } catch (err) {
+        this.$message.error(err);
+      }
     },
 
     handleBatchDelete() {

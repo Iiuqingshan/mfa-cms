@@ -21,7 +21,7 @@ export default {
         changeSwitch() {
             // 当开关状态发生变化时，更新 localValue，并通知父组件
             this.$emit('input', this.localValue); // 触发 input 事件，将最新值传递给父组件
-            this.$emit('change', this.value); // 可选：用于额外的逻辑处理
+            this.$emit('change', this.localValue); // 可选：用于额外的逻辑处理
         }
     },
     watch: {

@@ -51,7 +51,7 @@ export const deletePark = (id) => {
 }
 
 export const changeActive = (id, active) => {
-    Request.post(`/cms/parks/${id}/active`, active)
+    return Request.post(`/cms/parks/${id}/active`, active)
         .then(res => {
             return res
         })
@@ -61,7 +61,7 @@ export const changeActive = (id, active) => {
 }
 
 export const changeMapDisplay = (id, mapDisplay) => {
-    Request.post(`/cms/parks/${id}/map-display`, mapDisplay)
+    return Request.post(`/cms/parks/${id}/map-display`, mapDisplay)
         .then(res => {
             return res
         })
