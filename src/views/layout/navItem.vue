@@ -27,4 +27,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.is-active {
+    background-color: rgb(66, 129, 175) !important;
+}
+</style>

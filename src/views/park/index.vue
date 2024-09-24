@@ -34,7 +34,7 @@
             </CommonSwitch>
           </template>
         </el-table-column>
-        <el-table-column prop="mapDisplay" label="MapDisplay">
+        <el-table-column prop="mapDisplay" label="Map Display">
           <template v-slot="scope">
             <CommonSwitch v-model="scope.row.mapDisplay" :value="scope.row.mapDisplay"
               @change="handleMapDisplaySwitch(scope.row)"></CommonSwitch>
@@ -42,9 +42,10 @@
         </el-table-column>
         <el-table-column label="操作" align="center" width="160">
           <template v-slot="scope">
-            <i class="el-icon-edit" @click="handleEdit(scope.$index, scope.row)"
-              style="cursor: pointer; margin-right: 10px"></i>
-            <i class="el-icon-delete" @click="handleDelete(scope.$index, scope.row)" style="cursor: pointer"></i>
+            <el-button type="success" icon="el-icon-edit" size="small" circle
+              @click="handleEdit(scope.$index, scope.row)"></el-button>
+            <el-button type="danger" icon="el-icon-delete" size="small" circle
+              @click="handleDelete(scope.$index, scope.row)"></el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -86,28 +87,38 @@ export default {
         console.error("Error fetching data:", err);
       }
     },
+
     handleSearch() {
       console.log("handleSearch!");
     },
+
     handleEdit(idx, obj) {
       this.$router.push({ name: 'ParkDetail', params: { id: obj.id } });
     },
-    async handleActiveSwitch(row) {
-      console.log("handleActiveSwitch", row.id, row.active);
-      await changeActive(row.id, row.active);
 
-      this.$message({
-        message: 'Success!',
-        type: 'success'
-      });
-      this.fetchParks();
+    handleActiveSwitch(row) {
+      try {
+        changeActive(row.id, row.active);
+
+        this.$message({
+          message: 'Success!',
+          type: 'success'
+        });
+
+        this.fetchParks();
+      } catch (err) {
+        this.$message.error(err);
+      }
     },
+
     handleMapDisplaySwitch(row) {
       console.log("1111", row);
     },
+
     handleBatchDelete() {
       console.log("handleBatchDelete");
     },
+
     async handleDelete(idx, obj) {
       this.$confirm('Are you sure you want to delete?', '提示', {
         confirmButtonText: 'yes',

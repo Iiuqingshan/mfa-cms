@@ -88,7 +88,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.is-active {
-    background-color: rgb(66, 129, 175) !important;
-}
 </style>
