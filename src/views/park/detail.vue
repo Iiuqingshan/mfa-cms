@@ -46,65 +46,65 @@
 </template>
 
 <script>
-import { getParkById, createPark, updatePark } from '@/apis/park'
+import { getParkById, createPark, updatePark } from "@/apis/park";
 export default {
-  name: 'ParkDetail',
+  name: "ParkDetail",
   data() {
     return {
       parkId: null,
       park: {
-        name: '',
+        name: "",
         active: false,
         mapDisplay: false,
-        address: '',
-        description: '',
-        shortDescription: '',
-        announcement: '',
-        lastEntry: '',
-        latitude: '',
-        longitude: '',
-        staticMapLinkEn: '',
-        staticMapLinkCn: ''
-      }
-    }
+        address: "",
+        description: "",
+        shortDescription: "",
+        announcement: "",
+        lastEntry: "",
+        latitude: "",
+        longitude: "",
+        staticMapLinkEn: "",
+        staticMapLinkCn: ""
+      },
+    };
   },
   methods: {
     async savePark() {
-      const parkId = this.$route.params.id
-      console.log(parkId)
+      const parkId = this.$route.params.id;
+      console.log(parkId);
       try {
         if (parkId) {
-          await updatePark(parkId, this.park)
+          await updatePark(parkId, this.park);
         } else {
-          await createPark(this.park)
+          await createPark(this.park);
         }
         this.$message({
           showClose: true,
-          message: 'Success!',
-          type: 'success'
+          message: "Success!",
+          type: "success",
         });
-        this.$router.push('/')
+        this.$router.push("/");
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     },
     async loadPark() {
-      const id = this.$route.params.id
+      const id = this.$route.params.id;
       if (id) {
-        const res = await getParkById(this.$route.params.id)
-        this.park = res.data.data
+        const res = await getParkById(this.$route.params.id);
+        this.park = res.data.data;
       } else {
-        this.park = {}
+        this.park = {};
       }
     },
     goBack() {
-      this.$router.go(-1)
-    }
+      this.$router.go(-1);
+    },
   },
   created() {
     this.loadPark();
-  }
-}
+  },
+};
 </script>
 <style lang="less" scoped>
 .content {

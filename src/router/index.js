@@ -31,10 +31,10 @@ const routes = [
     {
         path: '/',
         component: Layout,
-        redirect: '/parks',
+        redirect: 'parks',
         children: [
             {
-                path: '/parks',
+                path: 'parks',
                 name: 'Park',
                 meta: { title: 'Parks'},
                 component: Parks
@@ -103,17 +103,16 @@ const routes = [
                 path: 'things-to-do',
                 name: 'ThingsToDo',
                 meta: { title: 'Things To Do'},
-                component: KeeperTalk,
                 redirect: '/things-to-do/keeper-talks',
                 children: [
                     {
-                        path: '/things-to-do/keeper-talks',
+                        path: 'keeper-talks',
                         name: 'KeeperTalk',
                         meta: { title: 'Keeper Talks'},
                         component: KeeperTalk
                     },
                     {
-                        path: '/things-to-do/animal-feedings',
+                        path: 'animal-feedings',
                         name: 'AnimalFeeding',
                         meta: { title: 'Animal Feedings'},
                         component: KeeperTalk

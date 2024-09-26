@@ -1,7 +1,13 @@
 import Request from "@/utils/axios";
 
-export const getParks = () => {
-    return Request.get('/cms/parks')
+export const getParks = (params) => {
+    let queryString = ''
+    if (params) {
+        const validParams = Object.fromEntries(Object.entries(params).filter(([key, value]) => value))
+        queryString = new URLSearchParams(validParams).toString()
+    }
+    const url = params ? `/cms/parks?${queryString}` : '/cms/parks'
+    return Request.get(url)
         .then(res => {
             return res
         })
