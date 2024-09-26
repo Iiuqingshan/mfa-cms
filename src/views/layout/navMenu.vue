@@ -16,7 +16,6 @@ export default {
     },
     data() {
         return {
-            activeMenu: '/parks',
             // 统一管理menu
             menus: [
                 {
