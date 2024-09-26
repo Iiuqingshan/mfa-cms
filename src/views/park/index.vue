@@ -133,23 +133,21 @@ export default {
       console.log("handleBatchDelete");
     },
 
-    async handleDelete(idx, obj) {
+    async handleDelete(obj) {
       this.$confirm('Are you sure you want to delete?', '提示', {
         confirmButtonText: 'yes',
         cancelButtonText: 'cancel',
         type: 'warning'
       }).then(() => {
-        deletePark(obj.id);
-        this.$message({
-          type: 'success',
-          message: 'Success!'
-        });
-        this.fetchParks();
+        deletePark(obj.id)
+          .then(res => {
+            this.$message({
+              type: 'success',
+              message: 'Success!'
+            });
+            this.fetchParks();
+          });
       }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: 'Cancel'
-        });
       });
     }
   }
