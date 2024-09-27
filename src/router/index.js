@@ -16,6 +16,7 @@ import Zones from "@/views/zone/index.vue";
 import Services from "@/views/service-category/index.vue";
 import KeeperTalk from "@/views/things-to-do/keeper-talk/index.vue"
 import Login from '@/views/login/index.vue'
+import Home from '@/views/home.vue'
 
 
 Vue.use(VueRouter);
@@ -28,6 +29,10 @@ const routes = [
     {
         path: '/login',
         component: Login
+    },
+    {
+        path: '/home',
+        component: Home
     },
     {
         path: '/',
