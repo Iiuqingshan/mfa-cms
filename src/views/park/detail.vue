@@ -78,9 +78,9 @@ export default {
         } else {
           await createPark(this.park);
         }
-        this.$message({
-          showClose: true,
-          message: "Success!",
+        this.$notify({
+          title: 'Success!',
+          message: "Create park successfully!",
           type: "success",
         });
         this.$router.push("/");

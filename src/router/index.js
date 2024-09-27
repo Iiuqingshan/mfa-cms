@@ -5,6 +5,7 @@ import Layout from "@/views/layout/index.vue";
 import Parks from "@/views/park/index.vue";
 import ParkDetail from "@/views/park/detail.vue";
 import Banners from "@/views/banner/index.vue";
+import BannerDetail from "@/views/banner/detail.vue";
 import Animals from "@/views/animal/index.vue";
 import Dines from "@/views/dine/index.vue";
 import Presentations from "@/views/presentation/index.vue";
@@ -42,7 +43,7 @@ const routes = [
             {
                 path: 'parks/park/:id?',
                 name: 'ParkDetail',
-                meta: { title: 'Detail'},
+                meta: { title: 'Park Detail'},
                 component: ParkDetail
             },
             {
@@ -50,6 +51,12 @@ const routes = [
                 name: 'Banner',
                 meta: { title: 'Banners'},
                 component: Banners
+            },
+            {
+                path: 'banners/banner/:id?',
+                name: 'BannerDetail',
+                meta: { title: 'Banner Detail'},
+                component: BannerDetail
             },
             {
                 path: 'animals',
