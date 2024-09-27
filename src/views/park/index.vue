@@ -7,7 +7,6 @@
     <div class="content">
       <el-table :data="parks" stripe style="width: 100%" cell-class-name="table-center"
         header-cell-class-name="active-header">
-        <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="name" label="Name" width="300"></el-table-column>
         <el-table-column prop="coordinates" label="Coordinates" width="300"></el-table-column>
         <el-table-column prop="active" label="Active">
